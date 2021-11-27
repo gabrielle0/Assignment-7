@@ -7,7 +7,6 @@ sentence = input ("Type your sentence:  ")
 
 number_Vowels = 0
 
-
 def get_Words (sentence):
     number_Words  = 1
     for character in sentence:
@@ -19,7 +18,17 @@ def get_Vowels (sentence, number_Vowels):
     for character in sentence:
         if character == "a":
             number_Vowels += 1
+        elif character == "e":
+            number_Vowels += 1
+        elif character == "i":
+            number_Vowels += 1
+        elif character == "o":
+            number_Vowels += 1
+        elif character == "u":
+            number_Vowels += 1
     return number_Vowels
+
+
 
 
 words = get_Words (sentence)
