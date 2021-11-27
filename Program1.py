@@ -5,19 +5,26 @@
 
 sentence = input ("Type your sentence:  ")
 
-def get_Words ():
-    count_Spaces = 1
-    for c in sentence:
-        if c == " ":
-            count1 = count_Spaces + 1
-            number_Words = count1
+def get_Words (sentence):
+    number_Words  = 1
+    for character in sentence:
+        if character == " ":
+            number_Words = number_Words + 1
     return number_Words
-
-
         
+def get_Vowels (sentence):
+    number_Vowels = 0
+    for character in sentence:
+        if character == "a":
+            number_Vowels = number_Vowels + 1 
+    return number_Vowels
 
-words = get_Words ()
 
+
+
+
+words = get_Words (sentence)
+vowels = get_Vowels (sentence)
 
 print (f"Number of words:{words}")
-
+print (f"Number of vowels: {vowels}")
