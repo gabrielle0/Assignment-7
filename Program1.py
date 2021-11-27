@@ -6,6 +6,7 @@
 sentence = input ("Type your sentence:  ")
 
 number_Vowels = 0
+number_Consonants = 0
 
 def get_Words (sentence):
     number_Words  = 1
@@ -28,11 +29,57 @@ def get_Vowels (sentence, number_Vowels):
             number_Vowels += 1
     return number_Vowels
 
-
-
+def get_Consonants (sentence, number_Consonants):
+    for character in sentence:
+        if character == "b":
+            number_Consonants += 1
+        elif character == "c":
+            number_Consonants += 1
+        elif character == "d":
+            number_Consonants += 1
+        elif character == "f":
+            number_Consonants += 1
+        elif character == "g":
+            number_Consonants += 1
+        elif character == "h":
+            number_Consonants += 1
+        elif character == "j":
+            number_Consonants += 1
+        elif character == "k":
+            number_Consonants += 1
+        elif character == "l":
+            number_Consonants += 1
+        elif character == "m":
+            number_Consonants += 1
+        elif character == "n":
+            number_Consonants += 1
+        elif character == "p":
+            number_Consonants += 1
+        elif character == "q":
+            number_Consonants += 1
+        elif character == "r":
+            number_Consonants += 1
+        elif character == "s":
+            number_Consonants += 1
+        elif character == "t":
+            number_Consonants += 1
+        elif character == "v":
+            number_Consonants += 1
+        elif character == "w":
+            number_Consonants += 1
+        elif character == "x":
+            number_Consonants += 1
+        elif character == "y":
+            number_Consonants += 1
+        elif character == "z":
+            number_Consonants += 1
+    return number_Consonants
+            
 
 words = get_Words (sentence)
 vowels = get_Vowels (sentence, number_Vowels)
+consonants = get_Consonants (sentence, number_Consonants)
 
 print (f"Number of words:{words}")
 print (f"Number of vowels: {vowels}")
+print (f"Number of consonants: {consonants}")
