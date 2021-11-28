@@ -6,11 +6,9 @@
 #c. Have at least one number
 #d. Have at least one special char (!@#$%^&*()_+ etc)
 
+
 password = input("Input your password:  ")
 total_Characters = len(password)
-
-last_char = password[total_Characters-1]
-second_last = password[total_Characters-2]
 
 password.islower()
 casecheck = password.islower()
@@ -35,9 +33,30 @@ def second_Criteria (casecheck):
         criteria2 = 1
     return  criteria2
 
+
+def third_Criteria (password):
+    for character in password:
+        if character == "0" or "1" or "2" or "3" or "4" or "5" or "6" or "7" or "8" or "9":
+            criteria3 = 1
+        else:
+            print (f"Invalid")
+            print (F"Password must have at least 1 number!")
+    return criteria3
+
+
+
+
+
+first_Criteria (total_Characters)
+second_Criteria (casecheck)
+third_Criteria (password)
+
+
+            
+
+
+
     
-first = first_Criteria (total_Characters)
-second = second_Criteria (casecheck)
 
 
 
