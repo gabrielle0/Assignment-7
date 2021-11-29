@@ -31,7 +31,7 @@ def second_Criteria (casecheck):
 
 def third_Criteria (password):
     for character in password:
-        if character.isdigit() :
+        if character.isdigit():
             return True
         else:
             return False
