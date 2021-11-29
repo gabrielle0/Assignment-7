@@ -29,7 +29,7 @@ def second_Criteria (casecheck):
         casecheck is False
     return  True
 
-def third_Criteria ():
+def third_Criteria (password):
     for character in password:
         if character.isdigit() :
             return True
@@ -60,7 +60,7 @@ def output (first, second, third, fourth):
 
 first = first_Criteria (total_Characters)
 second = second_Criteria (casecheck)
-third = third_Criteria ()
+third = third_Criteria (password)
 fourth = fourth_Criteria ()
 output (first, second, third, fourth)
 
