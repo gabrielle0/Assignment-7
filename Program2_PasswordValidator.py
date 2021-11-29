@@ -6,70 +6,63 @@
 #c. Have at least one number
 #d. Have at least one special char (!@#$%^&*()_+ etc)
 
+import string
 
 password = input("Input your password:  ")
 total_Characters = len(password)
 password.islower()
 casecheck = password.islower()
-
-
-def first_Criteria (total_Characters):
-    if total_Characters > 15:
-        criteria1 = 1
-    else:
-        criteria1 = 0
-        print ("Invalid. Password must have more than 15 characters!")
-    return criteria1
-
-def second_Criteria (casecheck):
-    if casecheck is True:
-            criteria2 = 0
-            print ("Invalid. Password must have at least one capital letter!")
-    else:
-        casecheck is False
-        criteria2 = 1
-    return  criteria2
-
-
-def third_Criteria (password):
-    for character in password:
-        if character == "0" or "1" or "2" or "3" or "4" or "5" or "6" or "7" or "8" or "9":
-            criteria3 = 1
-        else:
-            print (f"Invalid. Password must have at least 1 number!")
-            criteria3 = 0 
-    return criteria3
-
-
-import string
-
 password_Set = set(password)
 special_Characters_set = set(string.punctuation)
 
 
+def first_Criteria (total_Characters):
+    if total_Characters > 15:
+        return True
+    else:
+        return False
+
+def second_Criteria (casecheck):
+    if casecheck is True:
+        return False
+    else:
+        casecheck is False
+    return  True
+
+def third_Criteria ():
+    for character in password:
+        if character.isdigit() :
+            return True
+        else:
+            return False
+
 def fourth_Criteria ():
     if password_Set.intersection(special_Characters_set):
-        criteria4 = 1
+        return True
     else:
-        criteria4 = 0
-        print (f"Invalid password. There must be at least 1 special character.")
-    return criteria4
+        return False
 
-     
+
+def output (first, second, third, fourth):
+    if first or second or third or fourth is False:
+        print (f"Invalid.")
+        if first is False:
+            print (f"Password must have more than 15 characters.")
+        if second is False:
+            print (f"Password must have at least 1 capital letter.")
+        if third is False:
+            print (f"Password must have at least 1 number.")
+        if fourth is False:
+            print (f"Password must have at least 1 special character.")
+    else:
+        print (f"Valid password. ")
+        
+
 first = first_Criteria (total_Characters)
 second = second_Criteria (casecheck)
-third = third_Criteria (password)
+third = third_Criteria ()
 fourth = fourth_Criteria ()
-
-
-if first + second + third + fourth == 4:
-    print (f"Valid Password")
-
-
-
-
-    
-
+output (first, second, third, fourth)
 
 
 
