@@ -16,6 +16,12 @@ def get_Words (sentence, number_Spaces):
             number_Spaces += 1     
     return number_Words, number_Spaces
 
+
+import string
+special_Characters_set = set(string.punctuation)
+sentence_Set = set(sentence)
+
+
 def get_Vowels_consonants (sentence, number_Vowels, number_Consonants):
     for character in sentence:
         if character == "a":
@@ -29,7 +35,10 @@ def get_Vowels_consonants (sentence, number_Vowels, number_Consonants):
         elif character == "u":
             number_Vowels += 1
         else:
-            number_Consonants += 1       
+            if character.isdigit() or character in sentence_Set.intersection(special_Characters_set):
+                number_Consonants += 0
+            else:
+                number_Consonants += 1             
     return number_Vowels, number_Consonants
 
 
