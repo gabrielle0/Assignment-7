@@ -1,5 +1,5 @@
 #Steps:
-# Create a program that check if password is valid
+# Create a program that checks if password is valid
 #The password is valid if all criteria are met:
 #a. Greater than 15 letters
 #b. Have at least one capital letter
@@ -43,21 +43,22 @@ def fourth_Criteria ():
         return True
     else:
         return False
+        
 
 def output (first, second, third, fourth):
-    if first or second or third or fourth is False:
+    if first and second and third and fourth is True:
+        print (f"Valid Password.")
+    else:
         print (f"Invalid.")
         if first is False:
-            print (f"Password must have more than 15 characters.")
+            print (f'Password must have more than 15 characters.')
         if second is False:
             print (f"Password must have at least 1 capital letter.")
         if third is False:
             print (f"Password must have at least 1 number.")
         if fourth is False:
             print (f"Password must have at least 1 special character.")
-    else:
-        print (f"Valid password. ")
-        
+
 
 first = first_Criteria (total_Characters)
 second = second_Criteria (casecheck)
