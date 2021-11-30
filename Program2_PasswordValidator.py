@@ -12,9 +12,12 @@ password = input("Input your password:  ")
 total_Characters = len(password)
 password.islower()
 casecheck = password.islower()
+
 password_Set = set(password)
 special_Characters_set = set(string.punctuation)
 
+numbers_List = "1234567890"
+number_Set = set(numbers_List)
 
 def first_Criteria (total_Characters):
     if total_Characters > 15:
@@ -29,9 +32,8 @@ def second_Criteria (casecheck):
         casecheck is False
     return  True
 
-def third_Criteria (password):
-    for character in password:
-        if character.isdigit():
+def third_Criteria ():
+        if password_Set.intersection(number_Set):
             return True
         else:
             return False
@@ -41,7 +43,6 @@ def fourth_Criteria ():
         return True
     else:
         return False
-
 
 def output (first, second, third, fourth):
     if first or second or third or fourth is False:
@@ -60,7 +61,7 @@ def output (first, second, third, fourth):
 
 first = first_Criteria (total_Characters)
 second = second_Criteria (casecheck)
-third = third_Criteria (password)
+third = third_Criteria ()
 fourth = fourth_Criteria ()
 output (first, second, third, fourth)
 
